@@ -1,0 +1,102 @@
+#services {
+    position: relative;
+    overflow: hidden;
+    &::before, &::after  {
+        content: '';
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        transform: rotateZ(45deg);
+        background-image: url('../img/tyre-track.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    &::before {
+        top: 0;
+        right: 0;
+    }
+    &::after {
+        bottom: 0;
+        left: 0;
+        background-position: bottom;
+    }
+    .services-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .service {
+        width: calc(~"(100% - 100px) / 3");
+        margin: 0 50px 50px 0;
+        background-color: @white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        cursor: pointer;
+        transition: .2s;
+        position: relative;
+        top: 0;
+        &:nth-child(3) {margin: 0 0 50px 0}
+        &:hover {
+            top: -10px;
+        }
+    }
+    .icon-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+        background-image: linear-gradient(to bottom right, @main-color, @second-color);
+        position: relative;
+        .img-container {
+            position: absolute;
+            bottom: 0;
+            transform: translateY(15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            background-color: @main-black;
+            border-radius: 50%;
+            img {
+                width: 45px;
+                filter: invert();
+            }
+        }
+    }
+    .details {
+        display: flex;
+        flex-direction: column;
+        height: calc(~'100% - 100px');
+        padding: 25px;
+        font-size: 15px;
+        .title {
+            font-size: 1.1rem;
+            margin: 0 0 15px 0;
+        }
+        p {
+            flex-grow: 1;
+        }
+        .highlight {
+            font-weight: bold;
+            color: @main-color;
+            &:hover {text-decoration: underline}
+        }
+        .see-more {
+            display: block;
+            margin: 15px 0 0 0;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: left;
+            color: @main-color;
+            transition: .2s;
+            &:hover {text-decoration: underline}
+        }
+    }
+    .btn-wrapper {
+        text-align: center;
+        .btn {
+            padding: 20px 50px;
+        }
+    }
+}

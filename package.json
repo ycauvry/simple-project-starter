@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "client": "gulp watchFiles"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
